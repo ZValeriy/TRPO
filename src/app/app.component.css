@@ -40,3 +40,78 @@ header {
 .button:hover {
   box-shadow: none;
 }
+
+footer {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.address {
+  padding-left: 20px;
+  width: 250px;
+  border-left: 1px solid #B2B2B2;
+}
+
+.addr {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.block {
+  width: 190px;
+  margin-top: 20px;
+}
+
+.block__item {
+  color: rgb(92, 92, 92);
+  font-size: 13px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.block__value {
+  font-weight: bold;
+}
+
+.prkom {
+  font-size: 13px;
+  font-weight: bold;
+  color: #900;
+}
+
+.quote {
+  width: 350px;
+}
+
+.quote__title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #887D1E;
+}
+
+.quote__text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #887D1E;
+}
+
+.socialnetworks {
+  font-size: 13px;
+  width: 390px;
+}
+
+.icons {
+  width: 150px;
+}
+.icons img {
+  width: 150px;
+}
+
+.block a {
+  display: block;
+  text-decoration: none;
+  color: #0074C5;
+}
