@@ -1,0 +1,42 @@
+header {
+  width: 95%;
+  margin: 0 auto;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 110px;
+}
+
+.button {
+  border-radius: 10px;
+  width: 200px;
+  height: 45px;
+  color: #fff;
+  background-color: #F2C94C;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+  box-shadow: #F2C94C 3px 2px 7px;
+}
+
+.button:hover {
+  box-shadow: none;
+}
