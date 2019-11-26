@@ -4,8 +4,8 @@
   <div class="button">Вход для сотрудников</div>
 </header>
 <section class="content">
-  <section>
-    Залупа
+  <section class="main__component">
+    контент
   </section>
   <aside>
     <div class="aside__title">
@@ -87,3 +87,90 @@
     </div>
   </div>
 </footer>
+<app-mask class="opened"></app-mask>
+<div class="popup">
+  <div class="popup__title">Авторизация</div>
+  <div class="form">
+    <div class="label">Ввведите логин</div>
+    <input type="text" class="input">
+    <div class="label">Введите пароль</div>
+    <input type="text" class="input" type="password">
+    <button class="submit">Войти</button>
+  </div>
+</div>
+
+<div class="popup">
+  <div class="popup__title">Отслеживание заявления</div>
+  <div class="form">
+    <div class="label">Ввведите номер заявления</div>
+    <input type="text" class="input">
+    <div class="label">Введите ФИО</div>
+    <input type="text" class="input" type="text">
+    <button class="submit">Найти</button>
+  </div>
+</div>
+
+<div class="popup">
+  <div class="popup__title">Отправка заявления</div>
+  <div class="form">
+    <div class="popup__text">Ваше заявление на выпуск пропуска успешно отправлено.
+      Вы можете отслеживать его по номеру, указанному ниже.</div>
+    <div class="popup__number">XKHS-8U4j</div>
+    <button class="submit">Понятно</button>
+  </div>
+</div>
+
+<div class="popup">
+  <div class="popup__title">Заявление XKHS-8U4j</div>
+  <div class="statement">
+    <div class="statement__info">
+      <div class="statement__item">
+        <div class="statement__label">Фамилия:</div>
+        <div class="statement__value">Иванов</div>
+      </div>
+
+      <div class="statement__item">
+        <div class="statement__label">Имя:</div>
+        <div class="statement__value">Иван</div>
+      </div>
+
+      <div class="statement__item">
+        <div class="statement__label">Отчество:</div>
+        <div class="statement__value">Иванович</div>
+      </div>
+
+      <div class="statement__item">
+        <div class="statement__label">Группа:</div>
+        <div class="statement__value">ИУ5-62</div>
+      </div>
+
+      <div class="statement__item">
+        <div class="statement__label">Срок действия:</div>
+        <div class="statement__value">2018-2022</div>
+      </div>
+    </div>
+    <div class="statement__info statement__info__photo">
+      <img src="../static/logo.png" alt="" class="statement__photo">
+    </div>
+  </div>
+  <div class="buttons">
+    <div class="button button__reject">Отказать</div>
+    <div class="button button__resolve">Одобрить</div>
+  </div>
+</div>
+
+<div class="popup statement__reject">
+  <div class="popup__title">Отказ по заявлению XKHS-8U4j</div>
+    <div class="statement__reason">
+      <div class="statement__title">Укажите причину отказа:</div>
+      <select multiple name="reason[]" id="reason">
+        <option disabled>Причина отказа</option>
+        <option value="1">Неверные данные</option>
+        <option value="2">Фото</option>
+        <option value="3">Индекс группы</option>
+      </select>
+      <div class="statement__title">Комментарий:</div>
+      <textarea name="text" id="" class="textarea"></textarea>
+  </div>
+    <div class="button button__reason__resolve">Отправить</div>
+</div>
