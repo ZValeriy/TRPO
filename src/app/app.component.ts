@@ -28,4 +28,8 @@ export class AppComponent {
     this.isStatementRejectReasonHidden = true;
     this.isStatementSubmittedHidden = true;
   }
+
+  checkStatus() {
+    this.isFindStatementHidden = false;
+  }
 }
