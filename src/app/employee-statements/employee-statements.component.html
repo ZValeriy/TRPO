@@ -4,13 +4,14 @@
 
 <div class="table">
   <div class="table__row">
-    <div class="name__title"></div>
-    <div class="date__title"></div>
-    <div class="status__title"></div>
+    <div class="name__title">Имя</div>
+    <div class="date__title">Фамилия</div>
+    <div class="role__title">Роль</div>
+    <div class="status__title">Статус</div>
   </div>
 
   <app-statement-table-item class="table__row"
-                            *ngFor="statement of statements"
+                            *ngFor="let statement of statements"
                             [statement]="statement"
                             (click)="openStatement()">
   </app-statement-table-item>

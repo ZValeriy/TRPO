@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 
 export class StatementTableItemComponent implements OnInit {
-  @Input statement;
+  @Input() statement;
   constructor() { }
 
   ngOnInit() {
