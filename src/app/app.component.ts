@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ManagingPopupsService} from './managing-popups.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +9,65 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-  isStatementHidden = true;
-  isStatementRejectReasonHidden = true;
-  isStatementSubmittedHidden = true;
-  isFindStatementHidden = true;
-  isLoginFormHidden = true;
+
   get isMaskHidden() {
-    return !(!this.isStatementSubmittedHidden || !this.isLoginFormHidden ||
-      !this.isFindStatementHidden || !this.isStatementHidden || !this.isStatementRejectReasonHidden);
+    return this.popupsService.isMaskHidden;
   };
 
+  get isLoginFormHidden() {
+    return this.popupsService.isLoginFormHidden;
+  }
+
+  get isStatementHidden() {
+    return this.popupsService.isStatementHidden;
+  }
+
+  get isFindStatementHidden() {
+    return this.popupsService.isFindStatementHidden;
+  }
+
+  get isStatementSubmittedHidden() {
+    return this.popupsService.isStatementSubmittedHidden;
+  }
+  get isStatementRejectReasonHidden() {
+    return this.popupsService.isStatementRejectReasonHidden;
+  }
+
+  get isContinueStatementHidden() {
+    return this.popupsService.isContinueStatementHidden;
+  }
+
+  constructor(private popupsService: ManagingPopupsService, private router: Router) {
+  }
+
+  logIn() {
+    this.popupsService.hidePopups();
+    this.router.navigateByUrl('/employeeMain');
+  }
+
+
   openLoginForm() {
-    this.isLoginFormHidden = false;
+    this.popupsService.isLoginFormHidden = false;
+  }
+
+  rejectStatement() {
+    this.popupsService.rejectStatement();
+  }
+
+  resolveStatement() {
+    console.log('Урааа');
+  }
+
+  sendRejectReason() {
+    console.log('Отправка отказа заявления');
+  }
+
+  findStatement() {
+    this.popupsService.hidePopups();
+    this.router.navigateByUrl('/check');
   }
 
   hidePopupsAndMasks() {
-    this.isLoginFormHidden = true;
-    this.isStatementHidden = true;
-    this.isFindStatementHidden = true;
-    this.isStatementRejectReasonHidden = true;
-    this.isStatementSubmittedHidden = true;
-  }
-
-  checkStatus() {
-    this.isFindStatementHidden = false;
+    this.popupsService.hidePopups();
   }
 }

@@ -1,0 +1,17 @@
+<div class="title">
+  Заявления
+</div>
+
+<div class="table">
+  <div class="table__row">
+    <div class="name__title"></div>
+    <div class="date__title"></div>
+    <div class="status__title"></div>
+  </div>
+
+  <app-statement-table-item class="table__row"
+                            *ngFor="statement of statements"
+                            [statement]="statement"
+                            (click)="openStatement()">
+  </app-statement-table-item>
+</div>

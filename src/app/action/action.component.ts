@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ManagingPopupsService} from '../managing-popups.service';
 
 @Component({
   selector: 'app-action',
@@ -6,12 +7,16 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./action.component.css']
 })
 export class ActionComponent implements OnInit {
-  @Output() checkStatement: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private popupsServise: ManagingPopupsService) {
+}
 
   checkStatus() {
-    this.checkStatement.emit();
+    this.popupsServise.checkStatus();
+  }
+
+  continueStatement() {
+    this.popupsServise.continueStatement();
   }
 
   ngOnInit() {

@@ -13,6 +13,10 @@ import { NewStatementComponent } from './new-statement/new-statement.component';
 import { NewStatementEmployeeComponent } from './new-statement-employee/new-statement-employee.component';
 import { NewStatementForeignComponent } from './new-statement-foreign/new-statement-foreign.component';
 import { ForeingTableComponent } from './foreing-table/foreing-table.component';
+import {ManagingPopupsService} from './managing-popups.service';
+import { EmployeeStatementsComponent } from './employee-statements/employee-statements.component';
+import { StatementTableItemComponent } from './statement-table-item/statement-table-item.component';
+import {CommonModule} from '@angular/common';
 
 const appRoutes: Routes = [
   { path: '', component: ActionComponent},
@@ -20,7 +24,9 @@ const appRoutes: Routes = [
   { path: 'check', component: CheckStatementComponent},
   { path: 'newStatementStudent', component: NewStatementComponent},
   { path: 'newStatementEmployee', component: NewStatementEmployeeComponent},
-  { path: 'newStatementForeign', component: NewStatementForeignComponent}
+  { path: 'newStatementForeign', component: NewStatementForeignComponent},
+  { path: 'employeeMain', component: EmployeeComponent},
+  { path: 'employeeStatements', component: EmployeeStatementsComponent}
 ];
 
 
@@ -34,15 +40,18 @@ const appRoutes: Routes = [
     NewStatementComponent,
     NewStatementEmployeeComponent,
     NewStatementForeignComponent,
-    ForeingTableComponent
+    ForeingTableComponent,
+    EmployeeStatementsComponent,
+    StatementTableItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CommonModule
   ],
-  providers: [],
+  providers: [ManagingPopupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

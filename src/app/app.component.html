@@ -95,7 +95,7 @@
     <input type="text" class="input">
     <div class="label">Введите пароль</div>
     <input type="text" class="input" type="password">
-    <button class="submit">Войти</button>
+    <button class="submit" (click)="logIn()">Войти</button>
   </div>
 </div>
 
@@ -106,7 +106,18 @@
     <input type="text" class="input">
     <div class="label">Введите ФИО</div>
     <input type="text" class="input" type="text">
-    <button class="submit">Найти</button>
+    <button class="submit" (click)="findStatement()">Найти</button>
+  </div>
+</div>
+
+<div class="popup" [class.hidden]="isContinueStatementHidden">
+  <div class="popup__title">Продолжить заполнение</div>
+  <div class="form">
+    <div class="label">Ввведите номер заявления</div>
+    <input type="text" class="input">
+    <div class="label">Введите ФИО</div>
+    <input type="text" class="input" type="text">
+    <button class="submit" (click)="findStatement()">Найти</button>
   </div>
 </div>
 
@@ -154,8 +165,8 @@
     </div>
   </div>
   <div class="buttons">
-    <div class="button button__reject">Отказать</div>
-    <div class="button button__resolve">Одобрить</div>
+    <div class="button button__reject" (click)="rejectStatement()">Отказать</div>
+    <div class="button button__resolve" (click)="resolveStatement()">Одобрить</div>
   </div>
 </div>
 
@@ -172,5 +183,5 @@
       <div class="statement__title">Комментарий:</div>
       <textarea name="text" id="" class="textarea"></textarea>
   </div>
-    <div class="button button__reason__resolve">Отправить</div>
+    <div class="button button__reason__resolve" (click)="sendRejectReason()">Отправить</div>
 </div>

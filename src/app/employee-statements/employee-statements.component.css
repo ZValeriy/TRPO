@@ -1,0 +1,35 @@
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.table {
+  width: 80%;
+  margin: 50px auto 0;
+}
+
+.table__row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+  grid-gap: 20px;
+}
+
+.table__row:first-child {
+  border-bottom: 2px solid #828282;
+}
+
+.table__row:nth-child(2*n + 1) {
+  background-color: #0074C5;
+}
+
+.table__row:nth-child(2*n) {
+  background-color: #990000;
+}
+
+.name__title,.date__title,.status__title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
