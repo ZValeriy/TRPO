@@ -17,6 +17,9 @@ import {ManagingPopupsService} from './managing-popups.service';
 import { EmployeeStatementsComponent } from './employee-statements/employee-statements.component';
 import { StatementTableItemComponent } from './statement-table-item/statement-table-item.component';
 import {CommonModule} from '@angular/common';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 const appRoutes: Routes = [
   { path: '', component: ActionComponent},
@@ -48,6 +51,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     RouterModule.forRoot(appRoutes),
     CommonModule
   ],

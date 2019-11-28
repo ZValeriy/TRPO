@@ -24,12 +24,12 @@
   border-bottom: 2px solid #828282;
 }
 
-.table__row:nth-child(odd):not(:first-child) {
-  background-color: #0074C5;
+.table__row:nth-child(even) {
+  background-color: rgba(0,0,0,0.05);
 }
 
-.table__row:nth-child(even) {
-  background-color: #990000;
+.table__row:hover {
+  background-color: rgba(0,0,0,0.1);
 }
 
 .name__title,.date__title,.status__title,.role__title {
